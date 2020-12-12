@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Board from '../components/Board'
+import Board from './components/Board'
 import './index.css';
 
 class Game extends React.Component {
@@ -100,14 +100,6 @@ function calculateWinner(squares) {
     }
   }
   return null
-}
-
-function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
 }
 
 ReactDOM.render(
