@@ -2,6 +2,10 @@
   float: left;
   width: 360px;
   height: 360px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   &__row {
     &:after {

@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 
 import Board from './components/Board'
 import './index.scss';
+import Ximage from './assets/images/X.png'
+import Yimage from './assets/images/Y.png'
 
 class Game extends React.Component {
 
@@ -38,10 +40,12 @@ class Game extends React.Component {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    const X = <img alt="X" src={Ximage}/>
+    const Y = <img alt="Y" src={Yimage}/>
     if (this.calculateWinner(squares) || squares[i]) {
       return;
     }
-    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    squares[i] = this.state.xIsNext ? X : Y;
     this.setState({ 
       history: history.concat([{
         squares: squares,
@@ -69,7 +73,7 @@ class Game extends React.Component {
         'Go to start';
       return (
         <li key={move} className="game__li">
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className="game__button" onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     });

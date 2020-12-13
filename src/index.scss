@@ -1,6 +1,8 @@
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-image: url('./assets/images/bg.png');
 }
 
 .game {
@@ -14,12 +16,39 @@ body {
   }
 
   &__status {
+    text-align: center;
     float: left;
     width: 100%;
-    margin-bottom: 10px;
+    margin: 40px 0 0 0;
   }
   
   &__info {
     float: left;
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translate(-20%, -50%);
+  }
+
+  &__button {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ed3330;
+    padding: 8px;
+    margin-bottom: 5.5px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+
+    &:hover {
+      background: #04b804;
+      letter-spacing: 1px;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.4s ease 0s;
     }
+  }
 }
