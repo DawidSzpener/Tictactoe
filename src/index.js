@@ -29,9 +29,12 @@ class Game extends React.Component {
     ];
     for(let i = 0; i < lines.length; i++) {
       const [a, b, c] = lines[i];
-      if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-        return squares[a];
+      if(squares[a] !== null && squares[b] !== null && squares[c] !== null) {
+        if (squares[a].props.alt && squares[a].props.alt === squares[b].props.alt && squares[a].props.alt === squares[c].props.alt) {
+          return squares[a];
+        }
       }
+
     }
     return null
   }
@@ -80,7 +83,7 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = "Winner is: " + winner;
+      status = "Winner is: " + winner.props.alt;
     } else {
       status = "Next player is: " + (this.state.xIsNext ? 'X' : 'O');
     }
