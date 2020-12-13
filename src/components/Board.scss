@@ -1,0 +1,13 @@
+.board {
+  float: left;
+  width: 360px;
+  height: 360px;
+
+  &__row {
+    &:after {
+      clear: both;
+      content: "";
+      display: table;
+    }
+  }
+}
