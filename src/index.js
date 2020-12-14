@@ -15,6 +15,7 @@ class Game extends React.Component {
     }],
     stepNumber: 0,
     xIsNext: true,
+    isWinner: false
   };
 
   calculateWinner = (squares) => {
@@ -82,8 +83,13 @@ class Game extends React.Component {
       );
     });
 
+    let winningAnimation = null
+
     let status;
     if (winner) {
+      winningAnimation = 
+      <div className="game__winningAnimation">
+      </div>
       status = "Winner is: " + winner.props.alt;
     } else {
       status = 
@@ -100,6 +106,7 @@ class Game extends React.Component {
     return (
       <div className="game">
         <div className="game__logo">TIC TAC TOE</div>
+        {winningAnimation}
         <div className="game__status">{status}</div>
         <Board
           squares={current.squares}
