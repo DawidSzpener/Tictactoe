@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'minecraft';
+  src: url('./assets/fonts/minecraft-webfont.woff2') format('woff2'),
+       url('./assets/fonts/minecraft-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'logofont';
+  src: url('./assets/fonts/logofont/bitline15srb-webfont.woff2') format('woff2'),
+       url('./assets/fonts/logofont/bitline15srb-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   height: 100%;
   width: 100%;
@@ -5,21 +20,43 @@ body {
   background-image: url('./assets/images/bg.png');
 }
 
+
+
 .game {
   flex-direction: row;
   margin: 0 0 0 10%;
   width: 80%;
   height: 600px;
+  font-family: 'minecraft';
+
+  &__player {
+    &__arrow {
+      margin: -7px 0 0 -60px;
+      position: absolute;
+      animation: point 2s infinite;
+    }
+  }
 
   &__ol {
     padding-left: 30px;
   }
 
+  &__logo {
+    position: fixed;
+    left: 1%;
+    top: 1%;
+    font-family: 'logofont';
+    z-index: 500;
+    color: aliceblue;
+  }
+
   &__status {
     text-align: center;
+    letter-spacing: 5px;
+    font-size: 2rem;
     float: left;
     width: 100%;
-    margin: 40px 0 0 0;
+    margin: 5% 0 0 0;
     color: aliceblue;
   }
   
@@ -32,11 +69,12 @@ body {
   }
 
   &__button {
+    font-family: 'minecraft';
     color: #fff;
     text-transform: uppercase;
-    text-decoration: none;
     background: #ed3330;
-    padding: 8px;
+    padding: 10.8px 9.8px 8px 9.8px;
+    font-size: 1rem;
     margin-bottom: 5.5px;
     border-radius: 5px;
     display: inline-block;
@@ -51,5 +89,35 @@ body {
       box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
       transition: all 0.4s ease 0s;
     }
+  }
+}
+
+@keyframes point {
+  0% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@-webkit-keyframes point {
+  0% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+  50% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 }

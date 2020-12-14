@@ -5,6 +5,7 @@ import Board from './components/Board'
 import './index.scss';
 import Ximage from './assets/images/X.png'
 import Yimage from './assets/images/Y.png'
+import arrow from './assets/images/arrow.png'
 
 class Game extends React.Component {
 
@@ -85,11 +86,20 @@ class Game extends React.Component {
     if (winner) {
       status = "Winner is: " + winner.props.alt;
     } else {
-      status = "Next player is: " + (this.state.xIsNext ? 'X' : 'O');
+      status = 
+        <div className="game__player">
+          <div>
+            {this.state.xIsNext ? <img alt="arrow" className="game__player__arrow" src={arrow}/> : null}PLAYER X
+          </div>
+          <div style={{marginTop: "10px"}}> 
+            {!this.state.xIsNext ? <img alt="arrow" className="game__player__arrow" src={arrow}/> : null}PLAYER Y
+          </div>
+        </div>
     }
 
     return (
       <div className="game">
+        <div className="game__logo">TIC TAC TOE</div>
         <div className="game__status">{status}</div>
         <Board
           squares={current.squares}
