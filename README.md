@@ -8,4 +8,4 @@
 
 ## DEMO
 
-![demo](https://github.com/DawidSzpener/zadanie-5/blob/main/src/assets/images/okopress.gif)
+![demo](https://raw.githubusercontent.com/DawidSzpener/React---tictactoe/master/src/assets/images/demo.gif)
